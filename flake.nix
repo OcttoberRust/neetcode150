@@ -1,29 +1,29 @@
 {
-    description = "C++ environment for NeetCode 150";
-    
-    inputs.nixpkgs.url = "github:NixOS/nixpkgs";
+  description = "C++ environment for NeetCode 150";
 
-    outputs = {self, nixpkgs}:
-    let
-    	pkgs = nixpkgs.legacyPackages.x86_64-linux;
-    in {
-    	devShells.x86_64-linux = pkgs.mkShell {
-	    nativeBuildInputs = [
-	        pkgs.clang_16
-		pkgs.cmake
-		pkgs.conan
-		pkgs.ninja
-		pkgs.ccls
-		pkgs.gdb
-		pkgs.lld
-		pkgs.clang-tools
-	     ];
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs";
 
-	     shellHook = ''
-	         echo "C++ NeetCode 150 Environment Loaded!"
-		 export CXX=clang++
-		 export CC=clang
-		'';
-	};
-      };
+  outputs = { self, nixpkgs }:
+  let
+    pkgs = nixpkgs.legacyPackages.x86_64-linux;
+  in {
+    devShells.x86_64-linux.default = pkgs.mkShell {
+      nativeBuildInputs = [
+        pkgs.clang_16
+        pkgs.cmake
+        pkgs.conan
+        pkgs.ninja
+        pkgs.ccls
+        pkgs.gdb
+        pkgs.lld
+        pkgs.clang-tools
+      ];
+
+      shellHook = ''
+        echo "C++ NeetCode environment loaded!"
+        export CXX=clang++
+        export CC=clang
+      '';
+    };
+  };
 }
