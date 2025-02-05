@@ -1,0 +1,45 @@
+/build/
+/bin/
+/obj/
+/CMakeFiles/
+/CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+#Conan dependencies
+/conan.lock
+/conanbuildinfo.*
+/conanfile.lock
+/conan_dependencies/
+
+#IDE and Editor settings
+.vscode/
+.idea/
+*.code-workspace
+
+#OS-specific files
+.DS_Store
+Thumbs.db
+
+#Logs and temp files
+*.log
+*.tmp
+*.swp
+
+#Secret files
+.env
+*.pem
+*.crt
+*.key
+secrets.json
+config.json
+
+#Git-specific
+*.orig
+
+#Nix
+/result/
+*.drv
+*.gcroot/
+*.prof
+*.flake
