@@ -9,14 +9,14 @@
      std::unordered_map<char, int> letter_frequency;
 
      for (char c : s) {
-         frequency[c]++;
+         letter_frequency[c]++;
      }
 
      for (char c : t) {
-         if (frequency[c] == 0) {
+         if (letter_frequency[c] == 0) {
              return false;
-         }}
-         frequency[c]--;
+         }
+         letter_frequency[c]--;
      }
 
      return true;
